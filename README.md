@@ -85,23 +85,6 @@ The notebook also examines Random Forest feature importance. Among the highest-r
 - The internal random train/validation split does not rule out similarity between related network flows, so validation results may be optimistic.
 - This notebook classifies **pre-extracted flow features**. It does not capture live traffic, process raw PCAPs, integrate with a SIEM, or automatically respond to incidents.
 
-## Reproducing the notebook
-
-**Tools:** Python, Jupyter Notebook / Google Colab, pandas, NumPy, Matplotlib, seaborn, and scikit-learn.
-
-1. Download the **training** and **testing** CSV files from the [official UNSW-NB15 dataset page](https://research.unsw.edu.au/projects/unsw-nb15-dataset).
-2. Open [`01_EDA_(1)(1).ipynb`](./01_EDA_%281%29%281%29.ipynb) in Google Colab or Jupyter.
-3. The notebook currently reads CSV files from `/content/`, so upload both CSVs there when using Colab, or update the two `pd.read_csv(...)` paths for your environment.
-4. Run all notebook cells in order. The saved notebook includes the EDA plots, model reports, confusion matrices, attack-category analysis, and feature-importance chart.
-
-If packages are missing from your Python environment, install them with:
-
-```bash
-pip install numpy pandas matplotlib seaborn scikit-learn notebook
-```
-
-The notebook is a learning and evaluation artifact; **no web app or deployment service is required** to reproduce its results.
-
 ## Conclusion
 
 Machine learning can distinguish normal and malicious flows in this benchmark with high attack recall. However, **high detection rates alone do not make a usable SOC alerting system**. The much lower performance on the held-out test set and the number of false alarms show why independent evaluation and error analysis matter as much as model accuracy.
