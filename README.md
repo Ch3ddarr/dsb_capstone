@@ -30,7 +30,7 @@ The task is **binary classification** (normal vs. attack), not prediction of the
 ## Approach
 
 1. **Exploratory data analysis:** inspected class distributions, attack categories, protocols, connection durations, and other traffic features.
-2. **Preprocessing:** used `ColumnTransformer` with `StandardScaler` for numeric features and `OneHotEncoder(handle_unknown='ignore')` for categorical features (`proto`, `service`, and `state`). Preprocessing is included inside scikit-learn pipelines.
+2. **Preprocessing:** used `ColumnTransformer` with `StandardScaler` for putting numeric features on the same scale and `OneHotEncoder(handle_unknown='ignore')` for categorical features (`proto`, `service`, and `state`) which is used to label 1 or 0 based on the category present in the row. Preprocessing is included inside scikit-learn pipelines.
 3. **Validation:** split the designated training file into 80% training and 20% validation data, preserving class proportions with `stratify=y` and using `random_state=42`.
 4. **Baseline:** compared results against a simple strategy of labeling every flow as an attack (approximately **68.1% accuracy** on the original training distribution).
 5. **Model comparison:** trained **Logistic Regression**, **Decision Tree**, and **Random Forest**, and explored different maximum depths for Decision Tree.
