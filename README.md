@@ -245,41 +245,6 @@ You do not need to run any code to understand the project. The notebooks already
 
 The names above refer to the notebook versions used for this README. If files are renamed or moved when publishing the repository, follow the same reading order.
 
-### If you want to reproduce the experiments
-
-The notebooks use Python, pandas, NumPy, Matplotlib, seaborn and scikit-learn. They were written for a notebook environment such as Google Colab or Jupyter.
-
-For local execution, install the main dependencies:
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn notebook
-```
-
-**Part 1 — UNSW-NB15**
-
-1. Download `UNSW_NB15_training-set.csv` and `UNSW_NB15_testing-set.csv` from the [official dataset page](https://research.unsw.edu.au/projects/unsw-nb15-dataset).
-2. Open the Part 1 notebook and upload the two CSV files to Google Colab. The notebook expects them in `/content/`. For local execution, edit the paths in the `pd.read_csv()` calls.
-3. Run the cells from top to bottom.
-
-**Part 2 — CTU-13**
-
-1. Open the CTU-13 EDA notebook. It reads the [Scenario 1 bidirectional flow file](https://mcfp.felk.cvut.cz/publicDatasets/CTU-Malware-Capture-Botnet-42/detailed-bidirectional-flow-labels/capture20110810.binetflow) directly from the dataset source. If this fails, download that file and update the path.
-2. Run the EDA notebook, including the cells that create the `traffic_type` and `labeled_flows` variables.
-3. The modelling notebook expects a prepared file named `ml_dataset.csv`. If you do not already have it, run this additional cell at the end of the EDA notebook:
-
-   ```python
-   ml_df = labeled_flows.copy()
-   ml_df['target'] = (ml_df['traffic_type'] == 'From-Botnet').astype(int)
-   ml_df.to_csv('ml_dataset.csv', index=False)
-   ```
-
-   The exported file should contain 71,219 rows and 17 columns. Keep the original labels, timestamps and other fields: the modelling notebook will remove unnecessary inputs after the time split.
-
-4. Open the modelling notebook in the same Colab runtime, or upload the exported CSV to the new runtime. Ensure the path `/content/ml_dataset.csv` is correct (edit this path if working locally).
-5. Run the modelling cells in order. Do not substitute a different CTU-13 scenario if you want to reproduce the reported results.
-
-The full CTU-13 capture is relatively large, so allow sufficient memory. The results presented in this README are from the saved notebook outputs; package versions and execution state may affect reproducibility. No pretrained model, deployment service or live malware execution is required.
-
 ## Final conclusion
 
 The purpose of this capstone was to investigate whether machine learning could help identify malicious network traffic and, more importantly, to understand what is required to build and evaluate such a system responsibly.
