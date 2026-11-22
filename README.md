@@ -235,16 +235,6 @@ Cross-scenario evaluation on another CTU-13 capture is a possible extension of t
 
 You do not need to run any code to understand the project. The notebooks already contain saved tables, charts and model results. Start with Part 1 and then read Part 2. On GitHub, notebooks can usually be opened directly; alternatively, open them in [Google Colab](https://colab.research.google.com/).
 
-### Notebook reading order
-
-| Order | Notebook | What you will find |
-|---|---|---|
-| 1 | `01_EDA_(1)(1).ipynb` | UNSW-NB15 exploration, model training, evaluation and error analysis. |
-| 2 | `02_EDA_CT13_Cleaned.ipynb` | CTU-13 exploration, traffic labeling and data-quality checks. |
-| 3 | `02_Modelling.ipynb` | CTU-13 preprocessing, model comparison, final testing, feature importance and error analysis. |
-
-The names above refer to the notebook versions used for this README. If files are renamed or moved when publishing the repository, follow the same reading order.
-
 ## Final conclusion
 
 The purpose of this capstone was to investigate whether machine learning could help identify malicious network traffic and, more importantly, to understand what is required to build and evaluate such a system responsibly.
