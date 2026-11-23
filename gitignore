@@ -1,0 +1,49 @@
+# Python cache and build files
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and local configuration
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Jupyter Notebook / JupyterLab
+.ipynb_checkpoints/
+.jupyter/
+
+# Large or generated datasets (keep download instructions in data/README.md)
+data/raw/
+data/interim/
+data/processed/
+data/external/
+ml_dataset.csv
+*.binetflow
+*.pcap
+*.pcapng
+*.parquet
+*.feather
+
+# Local model files / generated artifacts
+*.joblib
+*.pkl
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak

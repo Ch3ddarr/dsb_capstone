@@ -1,0 +1,11 @@
+# Dependencies used by both Capstone projects (UNSW-NB15 and CTU-13).
+# Install with: pip install -r requirements.txt
+
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+
+# For opening and running .ipynb files locally (not needed in Google Colab).
+jupyterlab
