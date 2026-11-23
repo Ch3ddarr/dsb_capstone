@@ -24,7 +24,6 @@ Both projects use supervised machine learning, meaning that the models learn fro
 - [What the two projects taught me](#what-the-two-projects-taught-me)
 - [Potential use in cybersecurity](#potential-use-in-cybersecurity)
 - [Limitations and future work](#limitations-and-future-work)
-- [How to explore and run the project](#how-to-explore-and-run-the-project)
 - [Final conclusion](#final-conclusion)
 - [Dataset sources](#dataset-sources)
 
@@ -228,12 +227,6 @@ No live SOC deployment, workload reduction, cost savings or financial return was
 - Future improvements could include more recent data, grouping flows by device or time window, DNS-specific information where available, and independent evaluation on additional captures.
 
 Cross-scenario evaluation on another CTU-13 capture is a possible extension of the work, not a completed experiment.
-
-## How to explore and run the project
-
-### If you are not familiar with Python
-
-You do not need to run any code to understand the project. The notebooks already contain saved tables, charts and model results. Start with Part 1 and then read Part 2. On GitHub, notebooks can usually be opened directly; alternatively, open them in [Google Colab](https://colab.research.google.com/).
 
 ## Final conclusion
 
